@@ -1,7 +1,11 @@
 import { Stethoscope, Scale, Home, CreditCard } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useScrollAnimation, useDrawAnimation } from "@/hooks/useScrollAnimation";
 
 const ServicesSection = () => {
+  const titleRef = useScrollAnimation();
+  const descriptionRef = useScrollAnimation();
+  const ctaRef = useScrollAnimation();
+
   const services = [
     {
       icon: Stethoscope,
@@ -34,51 +38,67 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-gradient-section relative">
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-mask pointer-events-none" />
+      
+      <div className="container-custom relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+        <div className="text-center mb-20">
+          <h2 
+            ref={titleRef as any}
+            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary-foreground mb-8"
+          >
             Soluções Especializadas por Setor
           </h2>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <p 
+            ref={descriptionRef as any}
+            className="fade-up text-xl text-primary-foreground/90 max-w-4xl mx-auto font-poppins leading-relaxed"
+          >
             Desenvolvemos agentes de IA personalizados para as necessidades específicas 
             do seu segmento, garantindo máxima eficiência e resultados comprovados.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {services.map((service, index) => {
             const IconComponent = service.icon;
+            const cardRef = useScrollAnimation();
+            const iconRef = useDrawAnimation();
+            
             return (
               <div
                 key={index}
-                className="bg-background rounded-2xl p-8 shadow-hero hover:shadow-primary transition-all duration-300"
+                ref={cardRef as any}
+                className="fade-up card-service bg-background p-10"
               >
-                <div className="flex items-center mb-6">
-                  <div className="bg-gradient-primary rounded-xl p-3 mr-4">
-                    <IconComponent className="w-8 h-8 text-primary-foreground" />
+                <div className="flex items-center mb-8">
+                  <div className="bg-gradient-primary rounded-2xl p-4 mr-6">
+                    <IconComponent 
+                      ref={iconRef as any}
+                      className="w-10 h-10 text-primary-foreground" 
+                    />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground">
+                    <h3 className="font-montserrat font-bold text-responsive-h3 text-foreground">
                       {service.title}
                     </h3>
-                    <p className="text-primary font-medium">
+                    <p className="text-primary font-semibold font-poppins">
                       {service.subtitle}
                     </p>
                   </div>
                 </div>
                 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-8 leading-relaxed font-poppins text-lg">
                   {service.description}
                 </p>
                 
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3" />
-                      <span className="text-foreground">{feature}</span>
+                      <div className="w-3 h-3 bg-primary rounded-full mr-4" />
+                      <span className="text-foreground font-poppins">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -88,14 +108,10 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            className="text-lg px-8 py-6 h-auto font-semibold rounded-xl"
-          >
+        <div ref={ctaRef as any} className="fade-up text-center">
+          <button className="btn-primary text-lg px-12 py-4 font-semibold">
             Solicite um orçamento personalizado para sua empresa
-          </Button>
+          </button>
         </div>
       </div>
     </section>

@@ -1,6 +1,10 @@
 import { Zap, TrendingUp, Lightbulb, Shield } from "lucide-react";
+import { useScrollAnimation, useDrawAnimation } from "@/hooks/useScrollAnimation";
 
 const BenefitsSection = () => {
+  const titleRef = useScrollAnimation();
+  const descriptionRef = useScrollAnimation();
+
   const benefits = [
     {
       icon: Zap,
@@ -25,35 +29,48 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-background">
+      <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">
+        <div className="text-center mb-20">
+          <h2 
+            ref={titleRef as any}
+            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary mb-8"
+          >
             Descubra os benefícios da automação inteligente para sua empresa
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p 
+            ref={descriptionRef as any}
+            className="fade-up text-xl text-muted-foreground max-w-4xl mx-auto font-poppins leading-relaxed"
+          >
             Revolucione sua gestão empresarial com tecnologia de ponta que impulsiona 
             crescimento, reduz custos e maximiza a eficiência operacional.
           </p>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid-responsive">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
+            const cardRef = useScrollAnimation();
+            const iconRef = useDrawAnimation();
+            
             return (
               <div
                 key={index}
-                className="bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-primary group"
+                ref={cardRef as any}
+                className="fade-up card-service bg-card p-10 group"
               >
-                <div className="bg-gradient-primary rounded-xl p-4 w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-8 h-8 text-primary-foreground" />
+                <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <IconComponent 
+                    ref={iconRef as any}
+                    className="w-10 h-10 text-primary-foreground" 
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground mb-4">
+                <h3 className="font-montserrat font-bold text-responsive-h3 text-card-foreground mb-6">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed font-poppins">
                   {benefit.description}
                 </p>
               </div>
