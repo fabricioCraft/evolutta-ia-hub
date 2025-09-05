@@ -47,7 +47,7 @@ const ServicesSection = () => {
         <div className="text-center mb-20">
           <h2 
             ref={titleRef as any}
-            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary-foreground mb-8"
+            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary-foreground mb-8 drop-shadow-md"
           >
             Soluções Especializadas por Setor
           </h2>
@@ -71,7 +71,7 @@ const ServicesSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-background p-10"
+                className="fade-up card-service p-10"
               >
                 <div className="flex items-center mb-8">
                   <div className="bg-gradient-primary rounded-2xl p-4 mr-6">

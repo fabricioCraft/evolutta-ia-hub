@@ -14,21 +14,21 @@ const HeroSection = () => {
       
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       
       <div className="container-custom relative z-10 text-center text-white">
         <h1 
           ref={titleRef as any}
-          className="fade-up font-montserrat font-bold text-responsive-h1 mb-6 leading-tight"
+          className="fade-up font-montserrat font-bold text-responsive-h1 mb-6 leading-tight text-white text-on-gradient"
         >
           Evolua sua empresa com agentes de IA inteligentes
         </h1>
         
         <p 
           ref={descriptionRef as any}
-          className="fade-up text-xl md:text-2xl mb-12 max-w-4xl mx-auto opacity-90 font-poppins leading-relaxed"
+          className="fade-up text-xl md:text-2xl mb-12 max-w-4xl mx-auto font-poppins leading-relaxed text-white text-on-gradient"
         >
           Revolucione sua gestão empresarial com tecnologia de ponta que impulsiona 
           crescimento, reduz custos e maximiza a eficiência operacional através de 

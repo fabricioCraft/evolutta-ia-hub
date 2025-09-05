@@ -35,13 +35,13 @@ const BenefitsSection = () => {
         <div className="text-center mb-20">
           <h2 
             ref={titleRef as any}
-            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary mb-8"
+            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary mb-8 drop-shadow-sm"
           >
             Descubra os benefícios da automação inteligente para sua empresa
           </h2>
           <p 
             ref={descriptionRef as any}
-            className="fade-up text-xl text-muted-foreground max-w-4xl mx-auto font-poppins leading-relaxed"
+            className="fade-up text-xl text-dark max-w-4xl mx-auto font-poppins leading-relaxed"
           >
             Revolucione sua gestão empresarial com tecnologia de ponta que impulsiona 
             crescimento, reduz custos e maximiza a eficiência operacional.
