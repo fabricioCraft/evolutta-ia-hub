@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
               <div 
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card p-10 text-center"
+                className="fade-up card-service bg-card text-center"
               >
                 {/* Rating Stars */}
                 <div className="flex justify-center mb-6">

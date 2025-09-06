@@ -47,13 +47,13 @@ const ServicesSection = () => {
         <div className="text-center mb-20">
           <h2 
             ref={titleRef as any}
-            className="fade-up font-montserrat font-bold text-responsive-h2 text-primary-foreground mb-8 drop-shadow-md"
+            className="reveal-up font-montserrat font-bold text-responsive-h2 text-primary-foreground mb-8 drop-shadow-md hero-glow"
           >
             Soluções Especializadas por Setor
           </h2>
           <p 
             ref={descriptionRef as any}
-            className="fade-up text-xl text-primary-foreground/90 max-w-4xl mx-auto font-poppins leading-relaxed"
+            className="reveal-up text-xl text-primary-foreground/90 max-w-4xl mx-auto font-poppins leading-relaxed"
           >
             Desenvolvemos agentes de IA personalizados para as necessidades específicas 
             do seu segmento, garantindo máxima eficiência e resultados comprovados.
@@ -71,10 +71,10 @@ const ServicesSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service p-10"
+                className="reveal-scale card-service hover:scale-105 transition-all duration-500"
               >
                 <div className="flex items-center mb-8">
-                  <div className="bg-gradient-primary rounded-2xl p-4 mr-6">
+                  <div className="bg-gradient-primary rounded-2xl p-4 mr-6 hero-float">
                     <IconComponent 
                       ref={iconRef as any}
                       className="w-10 h-10 text-primary-foreground" 

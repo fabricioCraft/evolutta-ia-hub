@@ -85,7 +85,7 @@ const SecuritySection = () => {
 
         {/* CTA */}
         <div className="text-center mt-16">
-          <button className="btn-primary text-lg px-12 py-4 font-semibold bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+          <button className="btn-primary text-lg px-12 py-4 font-semibold">
             Conheça nossa solução de segurança
           </button>
         </div>

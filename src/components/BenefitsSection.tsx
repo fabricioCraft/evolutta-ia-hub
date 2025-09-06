@@ -59,9 +59,9 @@ const BenefitsSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card p-10 group"
+                className="fade-up card-service bg-card group"
               >
-                <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 hero-float">
                   <IconComponent 
                     ref={iconRef as any}
                     className="w-10 h-10 text-primary-foreground" 

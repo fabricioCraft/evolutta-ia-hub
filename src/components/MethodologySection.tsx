@@ -49,7 +49,7 @@ const MethodologySection = () => {
         </div>
 
         {/* Methodology Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
           {methodologySteps.map((step, index) => {
             const IconComponent = step.icon;
             const cardRef = useScrollAnimation();
@@ -59,14 +59,11 @@ const MethodologySection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card p-8 text-center relative"
+                className="fade-up card-service bg-card text-center relative reveal-scale hover:scale-105 transition-all duration-300"
               >
-                {/* Step Number */}
-                <div className="absolute top-4 right-4 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
-                  {index + 1}
-                </div>
+
                 
-                <div className="bg-gradient-primary rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                <div className="bg-gradient-primary rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6 hero-float">
                   <IconComponent 
                     ref={iconRef as any}
                     className="w-10 h-10 text-primary-foreground animate-draw" 
