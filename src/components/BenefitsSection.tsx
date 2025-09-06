@@ -59,18 +59,18 @@ const BenefitsSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card group"
+                className="fade-up card-service bg-card group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 card-interactive"
               >
-                <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 hero-float">
+                <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 hero-float icon-container relative z-10">
                   <IconComponent 
                     ref={iconRef as any}
                     className="w-10 h-10 text-primary-foreground" 
                   />
                 </div>
-                <h3 className="font-montserrat font-bold text-responsive-h3 text-card-foreground mb-6">
+                <h3 className="font-montserrat font-bold text-responsive-h3 text-card-foreground mb-6 relative z-10">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed font-poppins">
+                <p className="text-muted-foreground leading-relaxed font-poppins relative z-10">
                   {benefit.description}
                 </p>
               </div>

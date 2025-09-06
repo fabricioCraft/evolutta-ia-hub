@@ -62,20 +62,20 @@ const SecuritySection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up bg-background/10 backdrop-blur-sm p-8 rounded-2xl text-center"
+                className="fade-up bg-primary/20 backdrop-blur-sm p-8 rounded-2xl text-center group cursor-pointer transition-all duration-500 hover:bg-primary/30 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 border border-primary/30 hover:border-primary/50 card-interactive shadow-lg shadow-black/20"
               >
-                <div className="bg-primary-foreground/10 rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6 border border-primary-foreground/20">
+                <div className="bg-primary-foreground/10 rounded-full p-6 w-20 h-20 flex items-center justify-center mx-auto mb-6 border border-primary-foreground/20 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:scale-110 transition-all duration-300 group-hover:rotate-6 icon-container relative z-10">
                   <IconComponent 
                     ref={iconRef as any}
-                    className="w-10 h-10 text-primary-foreground animate-draw" 
+                    className="w-10 h-10 text-primary-foreground animate-draw group-hover:text-primary group-hover:scale-110 transition-all duration-300" 
                   />
                 </div>
                 
-                <h3 className="font-montserrat font-bold text-responsive-h3 text-primary-foreground mb-4">
+                <h3 className="font-montserrat font-bold text-responsive-h3 text-primary-foreground mb-4 group-hover:text-primary transition-colors duration-300 relative z-10">
                   {feature.title}
                 </h3>
                 
-                <p className="text-primary-foreground/80 leading-relaxed font-poppins">
+                <p className="text-primary-foreground/80 leading-relaxed font-poppins group-hover:text-primary-foreground/90 transition-colors duration-300 relative z-10">
                   {feature.description}
                 </p>
               </div>
