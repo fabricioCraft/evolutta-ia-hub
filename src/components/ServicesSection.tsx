@@ -99,7 +99,7 @@ const ServicesSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="reveal-scale card-service hover:scale-105 transition-all duration-500"
+                className="reveal-scale card-service services-card hover:scale-105 transition-all duration-500"
               >
                 <div className="flex items-center mb-8">
                   <div className="bg-gradient-primary rounded-2xl p-4 mr-6 hero-float">

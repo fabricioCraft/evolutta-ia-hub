@@ -19,7 +19,7 @@
     --background: var(--color-neutral-dark);
     --foreground: var(--color-white);
 
-    --card: rgba(255, 255, 255, 0.05);
+    --card: rgba(54, 12, 68, 0.95);
     --card-foreground: var(--color-white);
 
     --popover: var(--color-neutral-darker);
@@ -31,8 +31,8 @@
     --secondary: var(--color-secondary);
     --secondary-foreground: var(--color-white);
 
-    --muted: rgba(255, 255, 255, 0.08);
-    --muted-foreground: rgba(255, 255, 255, 0.7);
+    --muted: rgba(255, 255, 255, 0.15);
+    --muted-foreground: rgba(255, 255, 255, 1);
 
     --accent: var(--color-accent);
     --accent-foreground: var(--color-dark);
@@ -224,6 +224,36 @@
     color: var(--card-foreground);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    height: auto;
+  }
+
+  /* Specific card styles for different sections */
+  .card-service.benefits-card .text-card-foreground,
+  .card-service.benefits-card h3,
+  .card-service.methodology-card .text-card-foreground,
+  .card-service.methodology-card h3,
+  .card-service.testimonials-card .text-card-foreground,
+  .card-service.testimonials-card h4 {
+    color: #000000 !important;
+  }
+
+  .card-service.benefits-card .text-muted-foreground,
+  .card-service.methodology-card .text-muted-foreground,
+  .card-service.testimonials-card .text-muted-foreground {
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+
+  .card-service.services-card .text-card-foreground,
+  .card-service.services-card h3,
+  .card-service.services-card .text-foreground {
+    color: var(--color-white) !important;
+  }
+
+  .card-service.services-card .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.8) !important;
   }
   
   /* Responsive padding for cards */
@@ -251,6 +281,64 @@
   .card-service:hover .text-primary,
   .card-service:hover .text-muted-foreground,
   .card-service:hover .text-foreground {
+    color: var(--color-white) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  /* Specific hover styles for benefits and methodology cards */
+  .card-service.benefits-card:hover h3,
+  .card-service.methodology-card:hover h3 {
+    color: var(--color-white) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  /* Ensure testimonials cards have black text on white background */
+  .card-service.testimonials-card h4,
+  .card-service.testimonials-card p,
+  .card-service.testimonials-card .text-card-foreground,
+  .card-service.testimonials-card .text-muted-foreground,
+  .card-service.testimonials-card .text-primary,
+  .card-service.testimonials-card .text-foreground {
+    color: rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .card-service.testimonials-card .text-muted-foreground {
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+
+  /* Ensure stars and border are black on white background */
+  .card-service.testimonials-card svg,
+  .card-service.testimonials-card .text-accent {
+    color: rgba(0, 0, 0, 0.8) !important;
+    stroke: rgba(0, 0, 0, 0.8) !important;
+  }
+
+  .card-service.testimonials-card .border-border {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Specific hover styles for testimonials cards */
+  .card-service.testimonials-card:hover h4,
+  .card-service.testimonials-card:hover p,
+  .card-service.testimonials-card:hover .text-card-foreground,
+  .card-service.testimonials-card:hover .text-muted-foreground,
+  .card-service.testimonials-card:hover .text-primary {
+    color: var(--color-white) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  /* Ensure stars are white on hover (purple background) */
+  .card-service.testimonials-card:hover svg,
+  .card-service.testimonials-card:hover .text-accent {
+    color: var(--color-white) !important;
+    stroke: var(--color-white) !important;
+  }
+
+  .card-service.testimonials-card:hover .border-border {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+  }
+
+  .card-service.testimonials-card:hover .text-primary {
     color: var(--color-white) !important;
     text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
@@ -595,5 +683,105 @@
 
   .icon-container:hover {
     animation: iconPulse 1s ease-in-out infinite;
+  }
+
+  /* Hero Section Animations */
+  @keyframes floatVertical {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes pulseIA {
+    0%, 100% {
+      filter: brightness(0.7);
+    }
+    50% {
+      filter: brightness(1);
+    }
+  }
+
+  @keyframes lightFlowHorizontal {
+    0% {
+      background: linear-gradient(90deg, transparent, transparent, transparent);
+    }
+    50% {
+      background: linear-gradient(90deg, transparent, #F5A9FF, transparent);
+    }
+    100% {
+      background: linear-gradient(90deg, transparent, transparent, transparent);
+    }
+  }
+
+  @keyframes lightFlowVertical {
+    0% {
+      background: linear-gradient(180deg, transparent, transparent, transparent);
+    }
+    50% {
+      background: linear-gradient(180deg, transparent, #F5A9FF, transparent);
+    }
+    100% {
+      background: linear-gradient(180deg, transparent, transparent, transparent);
+    }
+  }
+
+  @keyframes lightCircle {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(245, 169, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(245, 169, 255, 0.6);
+    }
+  }
+
+  /* Footer Section Animations */
+  @keyframes lightBeam {
+    0% {
+      opacity: 0.3;
+      filter: brightness(0.7);
+    }
+    25% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(1.5);
+    }
+    75% {
+      opacity: 0.8;
+      filter: brightness(1.2);
+    }
+    100% {
+      opacity: 0.3;
+      filter: brightness(0.7);
+    }
+  }
+
+  .animate-float-vertical {
+    animation: floatVertical 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-ia {
+    animation: pulseIA 2s ease-in-out infinite;
+  }
+
+  .animate-light-flow-horizontal {
+    animation: lightFlowHorizontal 3s ease-in-out infinite;
+  }
+
+  .animate-light-flow-vertical {
+    animation: lightFlowVertical 3s ease-in-out infinite;
+  }
+
+  .animate-light-circle {
+    animation: lightCircle 2s ease-in-out infinite;
+  }
+
+  .animate-light-beam {
+    animation: lightBeam 4s ease-in-out infinite;
   }
 }

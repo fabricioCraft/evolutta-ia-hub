@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
               <div 
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card text-center flex-1 min-w-[300px] max-w-[400px]"
+                className="fade-up card-service testimonials-card bg-card text-center flex-1 min-w-[300px] max-w-[400px] hover:scale-105 transition-all duration-500"
               >
                 {/* Rating Stars */}
                 <div className="flex justify-center mb-6">

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useMouseTracking } from "@/hooks/useMouseTracking";
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-ai-business.jpg";
 
@@ -8,7 +7,6 @@ const HeroSection = () => {
   const titleRef = useScrollAnimation();
   const descriptionRef = useScrollAnimation();
   const ctaRef = useScrollAnimation();
-  const { mousePosition, elementRef } = useMouseTracking();
   const [particles, setParticles] = useState<Array<{id: number, size: number, delay: number, left: number}>>([]);
 
   useEffect(() => {
@@ -23,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={elementRef as React.RefObject<HTMLElement>} className="relative min-h-screen bg-gradient-hero flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-hero flex items-center justify-center overflow-hidden">
       {/* Interactive Particles Background */}
       <div className="particles-bg">
         {particles.map((particle) => (
@@ -35,7 +33,6 @@ const HeroSection = () => {
               height: `${particle.size}px`,
               left: `${particle.left}%`,
               animationDelay: `${particle.delay}s`,
-              transform: `translate(${mousePosition.x * 0.01 * (particle.id % 3 + 1)}px, ${mousePosition.y * 0.01 * (particle.id % 2 + 1)}px)`,
             }}
           />
         ))}
@@ -47,12 +44,11 @@ const HeroSection = () => {
       {/* Floating Circle */}
       <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-violet-600/20 rounded-full blur-xl animate-pulse hero-float-circle" />
       
-      {/* Interactive Background Image with Smooth Mouse Parallax */}
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 transition-transform duration-1000 ease-out"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
         style={{ 
           backgroundImage: `url(${heroImage})`,
-          transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px) scale(1.02)`,
         }}
       />
       

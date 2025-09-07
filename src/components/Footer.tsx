@@ -1,31 +1,25 @@
 import { Mail, Phone, MapPin, Linkedin, Instagram, Twitter, ArrowRight, ExternalLink } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useMouseTracking } from "@/hooks/useMouseTracking";
 
 const Footer = () => {
   const companyRef = useScrollAnimation();
-  const { mousePosition, elementRef } = useMouseTracking();
 
   return (
-    <footer ref={elementRef as React.RefObject<HTMLElement>} className="bg-gradient-hero text-white relative overflow-hidden">
-      {/* AI Circuit Board Background */}
+    <footer className="bg-gradient-hero text-white relative overflow-hidden">
+      {/* AI Circuit Board Background with Light Beam */}
       <div className="absolute inset-0 opacity-15">
         <div 
-          className="absolute inset-0 transition-transform duration-300 ease-out" 
+          className="absolute inset-0 animate-light-beam" 
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='circuit' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M20 20h60v60h-60z' fill='none' stroke='%23F5A9FF' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='80' cy='20' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='20' cy='80' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Cpath d='M20 20L50 50M80 20L50 50M20 80L50 50M80 80L50 50' stroke='%23F5A9FF' stroke-width='0.3' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='2' fill='%23F5A9FF' opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23circuit)'/%3E%3C/svg%3E")`,
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='circuit' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M20 20h60v60h-60z' fill='none' stroke='%23F5A9FF' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='80' cy='20' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='20' cy='80' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Ccircle cx='80' cy='80' r='3' fill='%23F5A9FF' opacity='0.4'/%3E%3Cpath d='M20 20L50 50M80 20L50 50M20 80L50 50M80 80L50 50' stroke='%23F5A9FF' stroke-width='0.3' opacity='0.2'/%3E%3Ccircle cx='50' cy='50' r='2' fill='%23F5A9FF' opacity='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23circuit)'/%3E%3C/svg%3E")`
           }} 
         />
       </div>
       
-      {/* Interactive AI Image */}
+      {/* Interactive AI Image with Light Beam */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-15 transition-transform duration-700 ease-out"
-          style={{
-            transform: `translate(${mousePosition.x * 0.03}px, ${mousePosition.y * 0.03}px) scale(1.1)`,
-          }}
+          className="absolute inset-0 opacity-15 animate-light-beam"
         >
           <svg viewBox="0 0 800 600" className="w-full h-full">
             <defs>
@@ -34,21 +28,21 @@ const Footer = () => {
                 <stop offset="100%" stopColor="#8B5CF6" stopOpacity="0.2" />
               </radialGradient>
             </defs>
-            {/* Neural Network Nodes */}
-            <circle cx="100" cy="150" r="8" fill="url(#aiGlow)" />
-            <circle cx="200" cy="100" r="6" fill="url(#aiGlow)" />
-            <circle cx="300" cy="200" r="10" fill="url(#aiGlow)" />
-            <circle cx="400" cy="120" r="7" fill="url(#aiGlow)" />
-            <circle cx="500" cy="180" r="9" fill="url(#aiGlow)" />
-            <circle cx="600" cy="140" r="5" fill="url(#aiGlow)" />
-            <circle cx="700" cy="160" r="8" fill="url(#aiGlow)" />
-            {/* Connections */}
-            <line x1="100" y1="150" x2="200" y2="100" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
-            <line x1="200" y1="100" x2="300" y2="200" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
-            <line x1="300" y1="200" x2="400" y2="120" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
-            <line x1="400" y1="120" x2="500" y2="180" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
-            <line x1="500" y1="180" x2="600" y2="140" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
-            <line x1="600" y1="140" x2="700" y2="160" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" />
+            {/* Neural Network Nodes with Light Beam */}
+            <circle cx="100" cy="150" r="8" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="200" cy="100" r="6" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="300" cy="200" r="10" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="400" cy="120" r="7" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="500" cy="180" r="9" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="600" cy="140" r="5" fill="url(#aiGlow)" className="animate-light-beam" />
+            <circle cx="700" cy="160" r="8" fill="url(#aiGlow)" className="animate-light-beam" />
+            {/* Connections with Light Beam */}
+            <line x1="100" y1="150" x2="200" y2="100" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
+            <line x1="200" y1="100" x2="300" y2="200" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
+            <line x1="300" y1="200" x2="400" y2="120" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
+            <line x1="400" y1="120" x2="500" y2="180" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
+            <line x1="500" y1="180" x2="600" y2="140" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
+            <line x1="600" y1="140" x2="700" y2="160" stroke="#F5A9FF" strokeWidth="2" opacity="0.6" className="animate-light-beam" />
             {/* Brain-like structure */}
             <path d="M150 300 Q250 250 350 300 Q450 350 550 300 Q650 250 750 300" stroke="#8B5CF6" strokeWidth="3" fill="none" opacity="0.7" />
             <path d="M150 350 Q250 300 350 350 Q450 400 550 350 Q650 300 750 350" stroke="#8B5CF6" strokeWidth="3" fill="none" opacity="0.7" />

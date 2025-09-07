@@ -59,7 +59,7 @@ const MethodologySection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card text-center relative reveal-scale hover:scale-105 transition-all duration-300"
+                className="fade-up card-service bg-card text-center relative reveal-scale methodology-card hover:scale-105 transition-all duration-300"
               >
 
                 
