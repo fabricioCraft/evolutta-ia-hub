@@ -11,29 +11,57 @@ const ServicesSection = () => {
       icon: Stethoscope,
       title: "Clínicas Odontológicas",
       subtitle: "Agentes de IA para clínicas: sorrisos otimizados, gestão inteligente",
-      description: "Automatize agendamentos, prontuários digitais, lembretes de consultas e análises de tratamentos. Melhore a experiência do paciente e aumente a eficiência da sua clínica.",
-      features: ["Agendamento automatizado", "Prontuários inteligentes", "Análise preditiva de tratamentos", "Gestão financeira automatizada"]
+      description: "Automatize agendamentos, otimize prontuários e personalize a experiência do paciente com IA.",
+      features: [
+        "Agendamento 100% automatizado com qualificação prévia",
+        "Prontuários digitais com análise preditiva de tratamentos",
+        "Gestão financeira em tempo real com pagamentos automatizados",
+        "Redução de faltas com lembretes de consultas inteligentes",
+        "Avaliação da satisfação do paciente com pesquisas automatizadas",
+        "Análise de dados para otimizar a gestão da clínica"
+      ]
     },
     {
       icon: Scale,
       title: "Escritórios de Advocacia",
       subtitle: "IA para advogados: eficiência, estratégia e resultados",
-      description: "Acelere pesquisas jurídicas, automatize contratos, gerencie prazos processuais e analise jurisprudências. Foque na estratégia enquanto a IA cuida da operação.",
-      features: ["Pesquisa jurídica automatizada", "Gestão de prazos processuais", "Análise de contratos", "Relatórios de produtividade"]
+      description: "Acelere pesquisas, automatize tarefas repetitivas e aumente a produtividade com IA.",
+      features: [
+        "Pesquisa jurídica automatizada em múltiplas fontes",
+        "Monitoramento de prazos processuais em tempo real",
+        "Análise de contratos com extração de cláusulas-chave",
+        "Geração automática de petições e relatórios personalizados",
+        "Previsão de resultados de processos com base em dados",
+        "Automação da comunicação com clientes e partes interessadas"
+      ]
     },
     {
       icon: Home,
       title: "Imobiliárias",
       subtitle: "Inteligência imobiliária: venda mais com agentes de IA",
-      description: "Qualifique leads automaticamente, faça avaliações precisas de imóveis, automatize follow-ups e optimize suas vendas com análise de mercado inteligente.",
-      features: ["Qualificação automática de leads", "Avaliação inteligente de imóveis", "CRM automatizado", "Análise de mercado preditiva"]
+      description: "Qualifique leads, avalie imóveis e automatize processos com IA para impulsionar suas vendas.",
+      features: [
+        "Qualificação automática de leads com filtros inteligentes",
+        "Avaliação precisa de imóveis via geolocalização e dados de mercado",
+        "CRM automatizado com follow-up personalizado e segmentado",
+        "Análise preditiva de tendências de mercado imobiliário",
+        "Busca dinâmica de imóveis com base em preferências específicas",
+        "Recomendação personalizada de imóveis para cada cliente"
+      ]
     },
     {
       icon: CreditCard,
       title: "Empréstimo Consignado",
       subtitle: "Crédito inteligente: agentes de IA para impulsionar seu negócio",
-      description: "Analise perfis de risco automaticamente, acelere aprovações, automatize documentação e maximize suas conversões com IA especializada em crédito.",
-      features: ["Análise de risco automatizada", "Aprovação acelerada", "Documentação inteligente", "Prevenção de fraudes"]
+      description: "Analise perfis de risco, automatize a documentação e impulsione suas conversões com IA.",
+      features: [
+        "Análise de risco automatizada com múltiplas APIs",
+        "Aprovação de crédito em tempo real e sem burocracia",
+        "Documentação inteligente com validação de dados",
+        "Prevenção de fraudes com verificação multicanal e biometria",
+        "Qualificação de leads via WhatsApp para agilizar o contato",
+        "Follow-up automatizado com mensagens personalizadas"
+      ]
     }
   ];
 
