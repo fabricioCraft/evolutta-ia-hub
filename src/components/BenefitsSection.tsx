@@ -49,7 +49,7 @@ const BenefitsSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid-responsive">
+        <div className="flex flex-wrap justify-center items-stretch gap-8 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             const cardRef = useScrollAnimation();
@@ -59,7 +59,7 @@ const BenefitsSection = () => {
               <div
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 card-interactive"
+                className="fade-up card-service bg-card group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 card-interactive w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]"
               >
                 <div className="bg-gradient-primary rounded-2xl p-6 w-20 h-20 flex items-center justify-center mb-8 hero-float icon-container relative z-10">
                   <IconComponent 

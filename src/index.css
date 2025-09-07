@@ -6,22 +6,24 @@
 
 @layer base {
   :root {
-    /* Color Palette */
+    /* Color Palette - Inspired by DynastyAI for smoother transitions */
     --color-primary: #360C44;
     --color-secondary: #6A1B9A;
     --color-accent: #E18AFF;
     --color-white: #FFFFFF;
     --color-dark: #0A0014;
+    --color-neutral-dark: #1a1625;
+    --color-neutral-darker: #120f1a;
 
-    /* Design System Colors */
-    --background: var(--color-white);
-    --foreground: var(--color-dark);
+    /* Design System Colors - Dark Theme for smooth transitions */
+    --background: var(--color-neutral-dark);
+    --foreground: var(--color-white);
 
-    --card: var(--color-white);
-    --card-foreground: var(--color-dark);
+    --card: rgba(255, 255, 255, 0.05);
+    --card-foreground: var(--color-white);
 
-    --popover: var(--color-white);
-    --popover-foreground: var(--color-dark);
+    --popover: var(--color-neutral-darker);
+    --popover-foreground: var(--color-white);
 
     --primary: var(--color-primary);
     --primary-foreground: var(--color-white);
@@ -29,22 +31,22 @@
     --secondary: var(--color-secondary);
     --secondary-foreground: var(--color-white);
 
-    --muted: 278 20% 95%;
-    --muted-foreground: 278 20% 45%;
+    --muted: rgba(255, 255, 255, 0.08);
+    --muted-foreground: rgba(255, 255, 255, 0.7);
 
     --accent: var(--color-accent);
     --accent-foreground: var(--color-dark);
 
-    /* Gradients */
+    /* Gradients - Smooth transitions */
     --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-    --gradient-hero: linear-gradient(180deg, var(--color-primary) 0%, transparent 100%);
-    --gradient-section: linear-gradient(180deg, var(--color-primary) 0%, transparent 100%);
-    --gradient-mask: linear-gradient(0deg, transparent 0%, rgba(255,255,255, .05) 100%);
+    --gradient-hero: linear-gradient(180deg, var(--color-primary) 0%, var(--color-neutral-dark) 100%);
+    --gradient-section: linear-gradient(180deg, var(--color-secondary) 0%, var(--color-neutral-dark) 100%);
+    --gradient-mask: linear-gradient(0deg, var(--color-neutral-dark) 0%, rgba(255,255,255, .02) 100%);
 
-    /* Shadows */
-    --shadow-primary: 0 4px 8px rgba(0,0,0,0.1);
-    --shadow-hero: 0 8px 16px rgba(0,0,0,0.2);
-    --shadow-card: inset 0 0 0 1px rgba(255,255,255,0.1), 0 2px 6px rgba(0,0,0,0.1);
+    /* Shadows - Enhanced for dark theme */
+    --shadow-primary: 0 4px 8px rgba(0,0,0,0.3);
+    --shadow-hero: 0 8px 32px rgba(0,0,0,0.4);
+    --shadow-card: inset 0 0 0 1px rgba(255,255,255,0.08), 0 4px 12px rgba(0,0,0,0.3);
 
     /* Spacing System */
     --spacing-base: 1rem;
@@ -66,8 +68,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 279 15% 90%;
-    --input: 279 15% 90%;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.1);
     --ring: var(--color-accent);
 
     --radius: 0.5rem;
@@ -212,12 +214,14 @@
   .card-service {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 2px 6px rgba(0,0,0,0.1);
-    transition: transform 0.4s ease;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.4s ease, background 0.4s ease;
     position: relative;
-    background: var(--color-white);
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: calc(var(--spacing-base) * 1.5);
-    color: var(--color-dark);
+    color: var(--card-foreground);
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
