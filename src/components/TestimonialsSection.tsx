@@ -53,7 +53,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid-responsive">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => {
             const cardRef = useScrollAnimation();
             
@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
               <div 
                 key={index}
                 ref={cardRef as any}
-                className="fade-up card-service bg-card text-center"
+                className="fade-up card-service bg-card text-center flex-1 min-w-[300px] max-w-[400px]"
               >
                 {/* Rating Stars */}
                 <div className="flex justify-center mb-6">
